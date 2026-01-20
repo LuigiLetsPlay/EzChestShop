@@ -1,5 +1,5 @@
 name: EzChestShop
-version: '1.0'
+version: '1.0.1'
 main: org.luigilp.ezChestShop.EzChestShop
 api-version: '1.20'
 softdepend: [Vault]
