@@ -1,0 +1,28 @@
+name: EzChestShop
+version: '1.0'
+main: org.luigilp.ezChestShop.EzChestShop
+api-version: '1.20'
+softdepend: [Vault]
+
+commands:
+  ezchestshop:
+    description: Main command for EzChestShop.
+    usage: /ezchestshop <create|reload|remove|info|help>
+    aliases: [ezcs]
+
+permissions:
+  ezchestshop.create:
+    description: Allows creating shops.
+    default: true
+  ezchestshop.reload:
+    description: Allows reloading config/messages.
+    default: op
+  ezchestshop.remove.own:
+    description: Allows removing your own shop (via breaking sign twice with axe).
+    default: true
+  ezchestshop.remove.any:
+    description: Allows removing any shop.
+    default: op
+  ezchestshop.bypass:
+    description: Bypass restrictions (open any shop chest, deposit anything).
+    default: op
