@@ -17,6 +17,7 @@ import org.luigilp.lPChestShop.util.GitHubReleaseUpdateChecker;
 import org.luigilp.lPChestShop.util.Messages;
 import org.luigilp.lPChestShop.util.Text;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -32,8 +33,8 @@ public final class LPChestShop extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        saveResource("messages.yml", false);
-        saveResource("shops.yml", false);
+        ensureResource("messages.yml");
+        ensureResource("shops.yml");
 
         this.messages = new Messages(this);
         this.sessionManager = new SessionManager();
@@ -63,6 +64,13 @@ public final class LPChestShop extends JavaPlugin {
         GitHubReleaseUpdateChecker.check(this, "LuigiLetsPlay", "LPChestShop");
 
         getLogger().info("LPChestShop enabled.");
+    }
+
+    private void ensureResource(String fileName) {
+        File out = new File(getDataFolder(), fileName);
+        if (!out.exists()) {
+            saveResource(fileName, false);
+        }
     }
 
     @Override
@@ -103,10 +111,6 @@ public final class LPChestShop extends JavaPlugin {
         return economy != null;
     }
 
-    public Economy getEconomy() {
-        return economy;
-    }
-
     public Messages getMessages() {
         return messages;
     }
@@ -117,10 +121,6 @@ public final class LPChestShop extends JavaPlugin {
 
     public ShopManager getShopManager() {
         return shopManager;
-    }
-
-    public GuiFactory getGuiFactory() {
-        return guiFactory;
     }
 
     public void openDetails(Player player, Shop shop) {
