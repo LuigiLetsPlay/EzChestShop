@@ -1,3 +1,4 @@
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/AkxVVGWjU3)
 ![LPChestShop](https://i.imgur.com/hjjSRVi.png)
 
 A lightweight, user-friendly chest shop plugin for Paper 1.20+ that lets players create clean, secure in-world shops using chests + signs — with a polished GUI flow, strict item matching, and Vault economy support.
